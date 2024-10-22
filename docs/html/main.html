@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Main Module Documentation &#8212; Game 2048 for PPY1 1.0.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=d1102ebc" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css?v=12dfc556" />
+    <script src="_static/documentation_options.js?v=8d563738"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Test Module Documentation" href="test_game.html" />
+    <link rel="prev" title="Welcome to Game 2048 for PPY1’s documentation!" href="index.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="main-module-documentation">
+<h1>Main Module Documentation<a class="headerlink" href="#main-module-documentation" title="Link to this heading">¶</a></h1>
+<p>This is the documentation for the <cite>main</cite> module.</p>
+<p>Contents:</p>
+<dl class="py class" id="module-main">
+<dt class="sig sig-object py" id="main.Game">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">main.</span></span><span class="sig-name descname"><span class="pre">Game</span></span><a class="headerlink" href="#main.Game" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Class representing the 2048 game.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Attributes<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p>GRID_SIZE (int): The size of the game grid.</p></li>
+<li><p>GRID_WIDTH (int): The width of the game grid in pixels.</p></li>
+<li><p>GRID_HEIGHT (int): The height of the game grid in pixels.</p></li>
+<li><p>TILE_SIZE (int): The size of each tile in pixels.</p></li>
+<li><p>WHITE (tuple): RGB tuple representing the color white.</p></li>
+<li><p>BLACK (tuple): RGB tuple representing the color black.</p></li>
+<li><p>GRAY (tuple): RGB tuple representing the color gray.</p></li>
+<li><p>FONT_SIZE (int): The size of the font for text display.</p></li>
+<li><p>screen (pygame.Surface): The Pygame surface representing the game window.</p></li>
+<li><p>colors (dict): Dictionary mapping tile values to their respective colors.</p></li>
+<li><p>grid (list): 2D list representing the game grid.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="main.Game.draw_grid">
+<span class="sig-name descname"><span class="pre">draw_grid</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#main.Game.draw_grid" title="Link to this definition">¶</a></dt>
+<dd><p>Displays the game grid.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="main.Game.draw_text">
+<span class="sig-name descname"><span class="pre">draw_text</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">text</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">color</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">font_size</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#main.Game.draw_text" title="Link to this definition">¶</a></dt>
+<dd><p>Displays text on the screen.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>text</strong> – The text to be displayed.</p></li>
+<li><p><strong>x</strong> – The X position to display the text.</p></li>
+<li><p><strong>y</strong> – The Y position to display the text.</p></li>
+<li><p><strong>color</strong> – The color of the text.</p></li>
+<li><p><strong>font_size</strong> – The size of the font.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="main.Game.draw_tiles">
+<span class="sig-name descname"><span class="pre">draw_tiles</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#main.Game.draw_tiles" title="Link to this definition">¶</a></dt>
+<dd><p>Displays the tiles of the game board.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="main.Game.game_over">
+<span class="sig-name descname"><span class="pre">game_over</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#main.Game.game_over" title="Link to this definition">¶</a></dt>
+<dd><p>Checks if the game is over.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><ul class="simple">
+<li><p>True if the game is over, otherwise False.</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="main.Game.game_over_screen">
+<span class="sig-name descname"><span class="pre">game_over_screen</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#main.Game.game_over_screen" title="Link to this definition">¶</a></dt>
+<dd><p>Displays the game over screen with options to play again or quit.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="main.Game.generate_tile">
+<span class="sig-name descname"><span class="pre">generate_tile</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#main.Game.generate_tile" title="Link to this definition">¶</a></dt>
+<dd><p>Generates a new tile on a random empty cell of the field.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="main.Game.move_down">
+<span class="sig-name descname"><span class="pre">move_down</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#main.Game.move_down" title="Link to this definition">¶</a></dt>
+<dd><p>Moves the tiles down.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="main.Game.move_left">
+<span class="sig-name descname"><span class="pre">move_left</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#main.Game.move_left" title="Link to this definition">¶</a></dt>
+<dd><p>Moves the tiles left.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="main.Game.move_right">
+<span class="sig-name descname"><span class="pre">move_right</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#main.Game.move_right" title="Link to this definition">¶</a></dt>
+<dd><p>Moves the tiles right.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="main.Game.move_up">
+<span class="sig-name descname"><span class="pre">move_up</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#main.Game.move_up" title="Link to this definition">¶</a></dt>
+<dd><p>Moves the tiles up.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="main.main">
+<span class="sig-prename descclassname"><span class="pre">main.</span></span><span class="sig-name descname"><span class="pre">main</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#main.main" title="Link to this definition">¶</a></dt>
+<dd><p>Main function to run the 2048 game.</p>
+</dd></dl>
+
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">Game 2048 for PPY1</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Main Module Documentation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#main.Game"><code class="docutils literal notranslate"><span class="pre">Game</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#main.main"><code class="docutils literal notranslate"><span class="pre">main()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="test_game.html">Test Module Documentation</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="index.html" title="previous chapter">Welcome to Game 2048 for PPY1’s documentation!</a></li>
+      <li>Next: <a href="test_game.html" title="next chapter">Test Module Documentation</a></li>
+  </ul></li>
+</ul>
+</div>
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &#169;2024, Arkadiy Panov, Shuliakov Maksym.
+      
+      |
+      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 7.3.7</a>
+      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 0.7.16</a>
+      
+      |
+      <a href="_sources/main.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

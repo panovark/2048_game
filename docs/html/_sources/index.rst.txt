@@ -1,0 +1,17 @@
+.. Game 2048 for PPY1 documentation master file, created by
+   sphinx-quickstart on Thu Apr 25 16:04:06 2024.
+   You can adapt this file completely to your liking, but it should at least
+   contain the root `toctree` directive.
+
+Welcome to Game 2048 for PPY1's documentation!
+==============================================
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Contents:
+
+.. toctree::
+   :maxdepth: 2
+
+   main
+   test_game

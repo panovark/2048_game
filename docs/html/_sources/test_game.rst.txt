@@ -1,0 +1,11 @@
+Test Module Documentation
+=========================
+
+This is the documentation for the `test_game` module.
+
+Contents:
+
+.. automodule:: test_game
+    :members:
+    :undoc-members:
+    :show-inheritance:

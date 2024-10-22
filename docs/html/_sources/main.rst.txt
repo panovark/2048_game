@@ -1,0 +1,11 @@
+Main Module Documentation
+=========================
+
+This is the documentation for the `main` module.
+
+Contents:
+
+.. automodule:: main
+    :members:
+    :undoc-members:
+    :show-inheritance:
