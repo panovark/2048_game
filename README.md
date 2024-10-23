@@ -6,4 +6,4 @@
 1. Open the `main.py` file.
 2. Run the file using your preferred IDE.
 
-📄 **To read the documentation, please follow [2048_game/docs/html/main.html](2048_game/docs/html/main.html).**
+📄 **To read the documentation, please follow [/docs/html/main.html](/docs/html/main.html).**
