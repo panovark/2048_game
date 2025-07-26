@@ -1,5 +1,7 @@
 import pygame
 import random
+import asyncio
+
 
 class Game:
 
@@ -30,13 +32,13 @@ class Game:
 
         # Game parameters
         self.GRID_SIZE = 4
-        self.GRID_WIDTH = 400
-        self.GRID_HEIGHT = 400
+        self.GRID_WIDTH = 800
+        self.GRID_HEIGHT = 800
         self.TILE_SIZE = self.GRID_WIDTH // self.GRID_SIZE
         self.WHITE = (255, 255, 255)
         self.BLACK = (0, 0, 0)
         self.GRAY = (128, 128, 128)
-        self.FONT_SIZE = 40
+        self.FONT_SIZE = 64
 
         # Initialize the screen
         self.screen = pygame.display.set_mode((self.GRID_WIDTH, self.GRID_HEIGHT))
@@ -208,36 +210,40 @@ class Game:
         """
         Displays the game over screen with options to play again or quit.
         """
+        raise NotImplementedError
+
+    async def game_over_screen_async(self):
+        clock = pygame.time.Clock()
         while True:
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
-                    pygame.quit()
-                    quit()
+                    pygame.quit(); return False
                 if event.type == pygame.KEYDOWN:
                     if event.key == pygame.K_p:
                         return True
                     if event.key == pygame.K_q:
-                        pygame.quit()
-                        quit()
+                        pygame.quit(); return False
 
             self.screen.fill(self.WHITE)
             self.draw_text("Game Over!", self.GRID_WIDTH // 2, self.GRID_HEIGHT // 2 - 50, self.BLACK, self.FONT_SIZE)
             self.draw_text("Play Again (P)", self.GRID_WIDTH // 2, self.GRID_HEIGHT // 2, self.BLACK, self.FONT_SIZE)
             self.draw_text("Quit (Q)", self.GRID_WIDTH // 2, self.GRID_HEIGHT // 2 + 50, self.BLACK, self.FONT_SIZE)
             pygame.display.flip()
+            clock.tick(60)
+            await asyncio.sleep(0)
 
-def main():
+async def main():
     """
     Main function to run the 2048 game.
     """
-    # Create an instance of the Game class
     game = Game()
+    clock = pygame.time.Clock()
     running = True
+
     while running:
         try:
             game.screen.fill(game.WHITE)
 
-            # Event handling
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     running = False
@@ -252,26 +258,23 @@ def main():
                     elif event.key == pygame.K_RIGHT:
                         game.move_right()
 
-                    # Move tiles and generate a new one if the field has changed
                     if game.grid != grid_before_move and not game.game_over():
                         game.generate_tile()
 
-            # Draw the grid and tiles
             game.draw_grid()
             game.draw_tiles()
-
-            # Display changes
             pygame.display.flip()
 
-            # Check if the game is over
             if game.game_over():
-                print("Game Over!")
-                if game.game_over_screen():  # If the player chooses to play again
-                    # Reset the game board
+                if await game.game_over_screen_async():
                     game.grid = [[0] * game.GRID_SIZE for _ in range(game.GRID_SIZE)]
-                    # Generate new tiles
                     for _ in range(2):
                         game.generate_tile()
+                else:
+                    running = False
+
+            clock.tick(60)
+            await asyncio.sleep(0)
         except Exception as e:
             print(f"An error occurred: {e}")
             running = False
@@ -279,4 +282,4 @@ def main():
     pygame.quit()
 
 if __name__ == "__main__":
-    main()
+    asyncio.run(main())
