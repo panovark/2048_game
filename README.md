@@ -64,6 +64,15 @@ pytest test_game.py
 
 ---
 
+## 📖 Documentation
+
+Full API documentation is available in HTML format:
+
+- Open `docs/html/index.html` in your browser for detailed documentation of all classes and methods
+- Documentation includes docstrings from `main.py` and `test_game.py`
+
+---
+
 ## Build for the web (pygbag)
 
 Install `pygbag` and build:
