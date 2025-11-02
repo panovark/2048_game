@@ -31,8 +31,11 @@ Classic **2048** implemented in **Python + pygame** and portable to the **web** 
 ```
 2048_game/
 ├── main.py            # game logic & rendering
-├── test_game.py       # optional tests/samples
-├── docs/              # optional local docs
+├── test_game.py       # unit tests (pytest)
+├── vercel.json        # Vercel deployment config
+├── .gitignore         # Git ignore rules
+├── LICENSE            # MIT License
+├── docs/              # Sphinx documentation (generated)
 └── build/
     └── web/           # web build artifacts (HTML, JS, WASM, data)
 ```
@@ -49,8 +52,14 @@ Requires Python 3.8+.
 python -m venv .venv
 source .venv/bin/activate   # Windows: .venv\Scripts\activate
 python -m pip install --upgrade pip
-python -m pip install pygame
+python -m pip install pygame pytest
 python main.py
+```
+
+To run tests:
+
+```bash
+pytest test_game.py
 ```
 
 ---
