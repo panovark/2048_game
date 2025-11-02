@@ -17,9 +17,6 @@ env/
 htmlcov/
 build/
 dist/
-docs/doctrees/
-docs/html/
-docs/_build/
 .DS_Store
 Thumbs.db
 *.log
